@@ -1,0 +1,17 @@
+package process;
+
+import java.util.*;
+
+public class CancelTicket 
+{
+	public void cancelTicket()
+	{
+		System.out.println("Please enter PNR Number");
+		Scanner s=new Scanner(System.in);
+	    int pnr=s.nextInt();
+	    
+	    Set<Integer> keys=Variables.pnrMap.keySet();
+	    Iterator<Integer> iterator=keys.iterator();
+	}
+
+}

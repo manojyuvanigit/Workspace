@@ -1,0 +1,18 @@
+package process;
+
+import java.util.*;
+
+public class Variables 
+{
+	public static int maxCnfTicket=230;
+	public static int maxRacTicket=70;
+	public static int maxWlTicket=50;
+	public static int countCnf=0;
+	public static int countRac=0;
+	public static int countWl=0;
+	
+	public static LinkedHashMap<Integer,ArrayList<String>> ticketCnf=new LinkedHashMap<Integer,ArrayList<String>>();
+	public static LinkedHashMap<Integer,ArrayList<String>> ticketRac=new LinkedHashMap<Integer,ArrayList<String>>();
+	public static LinkedHashMap<Integer,ArrayList<String>> ticketWl=new LinkedHashMap<Integer,ArrayList<String>>();
+
+}

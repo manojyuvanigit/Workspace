@@ -1,0 +1,64 @@
+package process;
+
+import java.io.*;
+import java.util.*;
+
+import javax.xml.stream.events.StartDocument;
+
+public class Home {
+	
+	static Home obj=new Home();
+	public static void main(String args[])
+	{
+		obj.startProcess();
+	}
+	public void startProcess()
+	{
+		
+		obj.menuOptions();
+		obj.navigationProcess();
+	}
+	public void menuOptions()
+	{
+		System.out.println("*********WELCOME TO TICTYM BUS BOOKING *********\n");
+		System.out.println("Please Select the Services:");
+		System.out.println("1 -> Book Ticket");
+		System.out.println("2 -> Cancel Ticket");
+		System.out.println("3 -> Print Booked Ticket");
+		System.out.println("4 -> Print Available Ticket");
+	}
+	public void navigationProcess()
+	{
+		int selectedOption=0;
+		System.out.println("\nPlease select the option to perform action \n>>");
+		Scanner s=new Scanner(System.in);
+		selectedOption=s.nextInt();
+		
+		BookTicket bookObj=new BookTicket();
+		PrintTicket printObj=new PrintTicket();
+		CancelTicket cancelObj=new CancelTicket();
+		
+		switch(selectedOption)
+		{
+			case 1:
+				   bookObj.getDetails();
+				   startProcess();
+				   break;
+			case 2:
+				   System.out.println("1");
+				   break;
+			case 3:
+				   printObj.printTicket();
+				   startProcess();
+				   break;
+			case 4:
+				   printObj.printAvailableTicket();
+				   startProcess();
+				   break;
+			default:
+				   System.out.println("Please enter the correct option");
+				   navigationProcess();
+		}
+	}
+
+}

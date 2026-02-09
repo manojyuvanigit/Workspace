@@ -1,0 +1,23 @@
+package process;
+
+import java.io.*;
+import java.util.*;
+
+public class HomePage {
+	
+	public static void main(String args[])
+	{
+		HomePage obj=new HomePage();
+		obj.menuOptions();
+		obj.navigationProcess();
+	}
+	public void menuOptions()
+	{
+		
+	}
+	public void navigationProcess()
+	{
+		
+	}
+
+}

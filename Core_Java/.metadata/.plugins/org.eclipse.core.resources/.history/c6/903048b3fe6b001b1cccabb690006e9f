@@ -1,0 +1,24 @@
+package process;
+
+import java.io.*;
+import java.util.*;
+
+public class BookTicket 
+{
+	public String name="";
+	public String busName="";
+	public String seatPreference="";
+	public int age=0;
+	public String gender="";
+	public String tempPreference="";
+	public void getDetails()
+	{
+		Scanner s=new Scanner(System.in);
+		
+	}
+	public static void main()
+	{
+		
+	}
+
+}

@@ -1,0 +1,16 @@
+package process;
+
+public class BookTicket 
+{
+	public String name="";
+	public String busName="";
+	public String seatPreference="";
+	public int age=0;
+	public String gender="";
+	public String tempPreference="";
+	public static void main()
+	{
+		
+	}
+
+}

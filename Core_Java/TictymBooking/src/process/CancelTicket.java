@@ -1,0 +1,116 @@
+package process;
+
+import java.util.*;
+
+public class CancelTicket 
+{
+	public void cancelTicket()
+	{
+		System.out.println("Please enter PNR Number");
+		Scanner s=new Scanner(System.in);
+	    int pnr=s.nextInt();
+	    boolean isTicket=true;
+	    Set<Integer> keys=Variables.pnrMap.keySet();
+	    Iterator<Integer> iterator=keys.iterator();
+	    while(iterator.hasNext())
+	    {
+	    	int tempPnr=iterator.next();
+	    	if(pnr==tempPnr)
+	    	{
+	    		String status=Variables.pnrMap.get(tempPnr);
+	    		if(status=="CNF")
+	    		{
+	    			if(Variables.countCnf==1)
+	    			{
+	    				Set<Integer> keys01=Variables.ticketCnf.keySet();
+	    				Iterator<Integer> iterator01=keys01.iterator();
+	    				while(iterator01.hasNext())
+	    				{
+	    					int tempPnr01=iterator01.next();
+	    					if(pnr==tempPnr01)
+	    					{
+	    						ArrayList<String> racPnr=Variables.ticketRac.get(Variables.ticketRac.keySet().iterator().next());
+	    						racPnr.add(6,status);
+	    						Variables.ticketRac.put(Integer.valueOf(racPnr.get(7)),racPnr);
+	    						Variables.ticketCnf.remove(pnr);
+	    					}
+	    				}
+	    			}
+	    			else
+	    			{
+	    				Set<Integer> keys1=Variables.ticketCnf.keySet();
+	    				Iterator<Integer> iterator2=keys1.iterator();
+	    				while(iterator2.hasNext())
+	    				{
+	    					int tempPnr1=iterator2.next();
+	    					ArrayList<String> details=Variables.ticketCnf.get(tempPnr1);
+	    					
+	    					if(tempPnr1 == Integer.valueOf(details.get(7)))
+	    					{
+	    						Variables.ticketCnf.remove(tempPnr1);
+	    					}
+	    				}
+	    				Variables.countCnf--;
+	    			}
+	    			System.out.println("Ticket Cancelled");
+	    		}
+	    		else if(status=="RAC")
+	    		{
+	    			if(Variables.countRac==1)
+	    			{
+	    				
+	    			}
+	    			else
+	    			{
+	    				Set<Integer> keys1=Variables.ticketRac.keySet();
+	    				Iterator<Integer> iterator2=keys1.iterator();
+	    				while(iterator2.hasNext())
+	    				{
+	    					int tempPnr1=iterator2.next();
+	    					ArrayList<String> details=Variables.ticketRac.get(tempPnr1);
+	    					
+	    					if(tempPnr1 == Integer.valueOf(details.get(7)))
+	    					{
+	    						Variables.ticketRac.remove(tempPnr1);
+	    					}
+	    				}
+	    				Variables.countRac--;
+	    			}
+	    			System.out.println("Ticket Cancelled");
+	    		}
+	    		else if(status=="WL")
+	    		{
+	    			if(Variables.countWl>=1)
+	    			{
+	    				Set<Integer> keys1=Variables.ticketWl.keySet();
+	    				Iterator<Integer> iterator2=keys1.iterator();
+	    				while(iterator2.hasNext())
+	    				{
+	    					int tempPnr1=iterator2.next();
+	    					ArrayList<String> details=Variables.ticketWl.get(tempPnr1);
+	    					
+	    					if(tempPnr1 == Integer.valueOf(details.get(7)))
+	    					{
+	    						Variables.ticketWl.remove(tempPnr1);
+	    					}
+	    				}
+	    				Variables.countWl--;
+	    			}
+	    			
+	    			System.out.println("Ticket Cancelled");
+	    		}
+	    		isTicket=true;
+	    		break;
+	    	}
+	    	else
+	    	{
+	    		isTicket=false;
+	    	}
+	    }
+	    if(!isTicket)
+	    {
+	    	System.out.println("The entered PNR is wrong");
+	    }
+	}
+
+}

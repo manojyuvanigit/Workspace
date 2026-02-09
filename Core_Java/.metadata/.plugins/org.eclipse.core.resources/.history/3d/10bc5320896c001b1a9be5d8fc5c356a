@@ -1,0 +1,38 @@
+package process;
+
+import java.util.*;
+
+public class CancelTicket 
+{
+	public void cancelTicket()
+	{
+		System.out.println("Please enter PNR Number");
+		Scanner s=new Scanner(System.in);
+	    int pnr=s.nextInt();
+	    
+	    Set<Integer> keys=Variables.pnrMap.keySet();
+	    Iterator<Integer> iterator=keys.iterator();
+	    while(iterator.hasNext())
+	    {
+	    	int tempPnr=iterator.next();
+	    	if(pnr==tempPnr)
+	    	{
+	    		String status=Variables.pnrMap.get(tempPnr);
+	    		if(status=="CNF")
+	    		{
+	    			if(Variables.countCnf==1)
+	    			{
+	    				
+	    			}
+	    			else
+	    			{
+	    				Set<Integer> keys1=Variables.ticketCnf.keySet();
+	    				Iterator<Integer> iterator2=keys1.iterator();
+	    				System.out.println("Ticket Cancelled");
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+}

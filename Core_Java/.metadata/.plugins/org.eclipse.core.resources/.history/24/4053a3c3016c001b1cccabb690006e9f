@@ -1,0 +1,19 @@
+package process;
+
+import Pack.Variables;
+
+public class PrintTicket 
+{
+	public void printAvailableTicket()
+	{
+		System.out.println("************AVAILABLE TRAIN TICKET************");
+		System.out.println(java.time.LocalDateTime.now());
+		System.out.println("____________________________________");
+		System.out.println("Confiremed Bearth:"+(Variables.maxCnfTicket-Variables.countCnf));
+		System.out.println("RAC:"+(Variables.maxRacTicket-Variables.countRac));
+		System.out.println("Waiting List:"+(Variables.maxWlTicket-Variables.countWl));
+		System.out.println("____________________________________");
+		System.out.println("************************************");
+	}
+
+}

@@ -1,0 +1,65 @@
+package test_package;
+import java.io.*;
+import java.util.*;
+
+public class test1 
+{
+	void testPrint()
+	{
+		System.out.println("Welcome to the ZOHO Test");
+	}
+	
+	public static void main(String args[])
+	{
+		test1 obj=new test1();
+		obj.testPrint();
+		
+		String str = "a!!!b.c.d,e'f,ghi"; 
+        char[] charArray = str.toCharArray(); 
+  
+        System.out.println("Input string: " + str); 
+        obj.reverse1(charArray); 
+        String revStr = new String(charArray); 
+  
+        System.out.println("Output string: " + revStr); 
+	}
+	void reverse1(char str[])
+	{
+		int r=str.length-1,l=0;
+		while(l<r)
+		{
+			if(!Character.isAlphabetic(str[l]))
+			{
+				l++;
+			}
+			else if(!Character.isAlphabetic(str[r]))
+			{
+				r--;
+			}
+			else
+			{
+				char temp=str[l];
+				str[l]=str[r];
+				str[r]=temp;
+				l++;
+				r--;
+			}
+		}
+	}
+	int getSecondMostFreq(int arr[])
+	{
+		int size = arr.length; 
+        int max_so_far = Integer.MIN_VALUE, max_ending_here = 0; 
+  
+        for (int i = 0; i < size; i++) 
+        { 
+            max_ending_here = max_ending_here + arr[i]; 
+            if (max_so_far < max_ending_here) 
+                max_so_far = max_ending_here; 
+            if (max_ending_here < 0) 
+                max_ending_here = 0; 
+        } 
+        System.out.println(max_so_far);
+        return max_so_far; 
+	}
+}

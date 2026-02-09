@@ -1,0 +1,26 @@
+package test_package;
+import java.io.*;
+import java.util.*;
+
+public class test1 
+{
+	
+	
+	public static void main(String args[])
+	{
+		test1 obj=new test1();
+		
+		int[] nums=new int[] {0,1,2,3,4};
+		int[] index=new int[] {0,1,2,2,1};
+		
+		obj.indexSwap(nums,index);
+         
+	}
+	
+	void indexSwap(int nums[],int index[])
+	{
+		int[] target=new int[1];
+		target[index[0]]=nums[index[0]];
+	}
+	
+}

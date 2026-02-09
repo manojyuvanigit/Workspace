@@ -1,0 +1,94 @@
+package test_package;
+import java.io.*;
+import java.util.*;
+
+public class test1 
+{
+	
+	
+	public static void main(String args[])
+	{
+		test1 obj=new test1();
+		
+		int[] nums=new int[] {0,1,2,3,4};
+		int[] index=new int[] {0,1,2,2,1};
+		
+		obj.indexSwap(nums,index);
+		
+		char[] chars=new char[] {'a','a','b','b','c','c','a','a','a'};
+		
+		System.out.println("*****************************");
+         
+		obj.charCount(chars);
+		
+		obj.removeDuplicate();
+	}
+	
+	void removeDuplicate()
+	{
+		String str1="corp1778";
+		char[] charArray=str1.toCharArray();
+		
+		for(int i=0;i<charArray.length;i++)
+		{
+			for(int j=i+1;j<charArray.length;j++)
+			{
+				if(charArray[i] == charArray[j])
+				{
+					charArray[j]=
+				}
+			}
+		}
+	}
+	
+	void charCount(char chars[])
+	{
+		int counter=0;
+		for(int i=0;i<chars.length;i++)
+		{
+			System.out.println(chars[i]);
+		
+			for(int j=i;j<chars.length;j++)
+			{
+				if(chars[i] == chars[j])
+				{
+					counter++;
+				}
+				else
+				{
+					i=j-1;
+					break;
+				}
+			}
+			
+			if(counter > 1)
+			{
+				System.out.println(counter);
+			}
+			counter=0;
+		}
+	}
+	void indexSwap(int nums[],int index[])
+	{
+		int[] target=new int[nums.length];
+		
+		
+		for(int i=0;i<nums.length;i++)
+		{
+			addValue(target,index[i],nums[index[i]]);
+		}
+		print(target);
+	}
+	void addValue(int target[],int i,int v)
+	{
+		target[i]=v;
+	}
+	void print(int target[])
+	{
+		for(int i=0;i<target.length;i++)
+		{
+			System.out.println(target[i]);
+		}
+	}
+	
+}

@@ -1,0 +1,25 @@
+package process;
+
+import process.Variables;
+import java.util.*;
+
+public class PrintTicket 
+{
+	public void printAvailableTicket()
+	{
+		System.out.println("************AVAILABLE BUS TICKET************");
+		System.out.println(java.time.LocalDateTime.now());
+		System.out.println("____________________________________");
+		System.out.println("Confiremed Bearth:"+(Variables.maxCnfTicket-Variables.countCnf));
+		System.out.println("RAC:"+(Variables.maxRacTicket-Variables.countRac));
+		System.out.println("Waiting List:"+(Variables.maxWlTicket-Variables.countWl));
+		System.out.println("____________________________________");
+		System.out.println("************************************");
+	}
+	public void printTicket()
+	{
+		Scanner s=new Scanner(System.in);
+		int pnr=s.nextInt();
+	}
+
+}
